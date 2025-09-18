@@ -1,0 +1,6 @@
+Términos y Condiciones — SebaBiblio
+
+El creador de este software no se responsabiliza por el lugar donde sea instalado ni por el uso que se haga del mismo.
+La instalación y utilización del software implica la aceptación total de estos términos y condiciones por parte del usuario.
+
+Al aceptar, el operador autoriza el envío de una notificación de instalación al creador (solo si acepta). Si no acepta, el programa no continuará.

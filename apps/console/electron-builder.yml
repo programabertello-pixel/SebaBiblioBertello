@@ -1,0 +1,11 @@
+appId: com.bertello.sebabiblio.console
+productName: ConsolaCreador
+directories:
+  output: dist
+files:
+  - "electron/**"
+  - "console_ui/**"
+  - "../../electron_shared/**"
+win:
+  target:
+    - portable

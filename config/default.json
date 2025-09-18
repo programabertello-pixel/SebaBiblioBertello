@@ -1,0 +1,8 @@
+{
+  "llama3_api_key": "",
+  "creator_email": "programabertello@gmail.com",
+  "creator_password": "2003",
+  "tlk": { "room_from":"sebabiblio", "room_to":"programbiblio" },
+  "trial_days": 70,
+  "product_names": { "client": "SebaBiblio", "console": "ConsolaCreador" }
+}

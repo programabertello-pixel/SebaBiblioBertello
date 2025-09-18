@@ -1,0 +1,1 @@
+const fs = require('fs'); const cfg = JSON.parse(fs.readFileSync(__dirname + '/../../config/default.json','utf8')); async function summarize(text){ if(!cfg.llama3_api_key) return '(Llama3 no configurado) ' + text.slice(0,200); return '(Llama3) resumen simulado'; } module.exports = { summarize };

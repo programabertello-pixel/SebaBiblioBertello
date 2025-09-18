@@ -1,0 +1,21 @@
+{
+  "name": "sebabiblio-client",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --config electron-builder.yml --win portable"
+  },
+  "dependencies": {
+    "better-sqlite3": "^8.0.0",
+    "papaparse": "^5.4.1",
+    "xlsx": "^0.18.5",
+    "bwip-js": "^2.0.0",
+    "pdfkit": "^0.13.0",
+    "axios": "^1.4.0",
+    "puppeteer": "^20.9.0"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0"
+  }
+}

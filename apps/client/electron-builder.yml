@@ -1,0 +1,11 @@
+appId: com.bertello.sebabiblio.client
+productName: SebaBiblio
+directories:
+  output: dist
+files:
+  - "electron/**"
+  - "app/**"
+  - "../../electron_shared/**"
+win:
+  target:
+    - portable

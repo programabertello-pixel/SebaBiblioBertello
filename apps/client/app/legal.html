@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Aceptación</title></head><body>
+<h1>Términos y Condiciones</h1>
+<p>El creador de este software no se responsabiliza por el lugar donde sea instalado ni por el uso que se haga del mismo.</p>
+<form id="f">
+<label>Operador: <input id="op" required></label><br>
+<label>Email: <input id="mail" required></label><br>
+<label>Institución: <input id="inst" required></label><br>
+<label><input type="checkbox" id="accept"> Acepto los términos</label><br>
+<button type="button" id="ok">Aceptar</button>
+<button type="button" id="no">No aceptar</button>
+</form>
+<script>
+document.getElementById('no').onclick = ()=> window.close();
+document.getElementById('ok').onclick = async ()=>{
+  const mail = document.getElementById('mail').value.trim();
+  const inst = document.getElementById('inst').value.trim();
+  const accept = document.getElementById('accept').checked;
+  if(!mail || !inst || !accept){ alert('Todos los campos obligatorios y aceptar'); return; }
+  await window.api.submitActivation({ email: mail, institution: inst, acceptTerms: true });
+  alert('Aceptado. Se notificará al creador.');
+  location.href = 'index.html';
+};
+</script>
+</body></html>

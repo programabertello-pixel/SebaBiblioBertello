@@ -1,0 +1,16 @@
+{
+  "name": "sebabiblio-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "install:all": "npm ci --workspaces",
+    "build:client": "npm --workspace=apps/client run build",
+    "build:console": "npm --workspace=apps/console run build",
+    "build:all": "npm run build:client && npm run build:console"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.0.0"
+  }
+}

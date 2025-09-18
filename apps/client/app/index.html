@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset='utf-8'><title>SebaBiblio</title></head><body>
+<h1>SebaBiblio - Dashboard</h1>
+<button id="btnBooks">Listar Libros</button>
+<button id="btnUsers">Listar Usuarios</button>
+<button id="btnLoan">Prestar</button>
+<button id="btnReturn">Devolver</button>
+<pre id="out"></pre>
+<script>
+const out = document.getElementById('out');
+document.getElementById('btnBooks').onclick = async ()=>{ const b = await window.api.booksList(); out.textContent = JSON.stringify(b,null,2); };
+document.getElementById('btnUsers').onclick = async ()=>{ const u = await window.api.usersList(); out.textContent = JSON.stringify(u,null,2); };
+document.getElementById('btnLoan').onclick = async ()=>{ const uid = prompt('ID usuario'); const bid = prompt('ID libro'); const days = prompt('Dias', '14'); if(!uid||!bid) return; const r = await window.api.createLoan({user_id:Number(uid), book_id:Number(bid), days:Number(days)}); alert('Prestamo creado ID: '+r.id); };
+document.getElementById('btnReturn').onclick = async ()=>{ const id = prompt('ID prestamo'); if(!id) return; await window.api.returnLoan(Number(id)); alert('Devolución registrada'); };
+</script></body></html>
