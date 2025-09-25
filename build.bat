@@ -1,14 +1,24 @@
-@echo off
-echo Compilando...
-node -v >nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-  echo Node.js no encontrado. Instalá Node LTS desde https://nodejs.org/ y volvé a intentar.
-  pause
-  exit /b 1
-)
-npm ci --no-audit --no-fund
-npx electron-builder --config apps/client/electron-builder.yml --project apps/client --win portable
-npx electron-builder --config apps/console/electron-builder.yml --project apps/console --win portable
-echo.
-echo Listo, los ejecutables están en apps\client\dist\ y apps\console\dist\
-pause
+name: Package Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create ZIP archive
+        run: |
+          zip -r packaged-app.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: packaged-app
+          path: packaged-app.zip
